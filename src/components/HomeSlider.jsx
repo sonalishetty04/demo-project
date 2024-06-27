@@ -22,9 +22,9 @@ function HomeSlider() {
   ];
 
   return (
-    <div className=" flex items-center justify-center p-5 ">
+    <div className=" flex items-center justify-center p-5 md:p-0 ">
       <Carousel
-        className="w-full max-w-screen  h-1/4"
+        className="w-full max-w-screen  h-1/4 "
         plugins={[autoplayRef.current]}
       >
         <CarouselContent>

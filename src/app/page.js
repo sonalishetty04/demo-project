@@ -1,15 +1,13 @@
-import { Button } from "@/components/ui/button";
 import HomeSlider from "@/components/HomeSlider";
-import ServicesSlider from "@/components/ServicesSlider";
 import HealthPackages from "@/components/HealthPackages";
+import Services from "@/components/Services";
 
 export default function Home() {
   return (
     <div className="h-full overflow-y-auto ">
       <HomeSlider />
 
-      <ServicesSlider />
-
+      <Services />
       <HealthPackages />
     </div>
   );

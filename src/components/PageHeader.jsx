@@ -16,6 +16,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "./ui/button";
+import NavigationMenu from "./NavigationMenu";
+import LoginForm from "./LoginForm";
 
 function PageHeader() {
   const [city, setCity] = useState("Bengaluru");
@@ -28,7 +30,7 @@ function PageHeader() {
 
   return (
     <div className=" w-full sticky top-0 z-50 bg-white shadow-md">
-      <div className="flex  items-center justify-between p-2 ">
+      <div className="flex  items-center justify-between px-4 p-1 ">
         <img
           className=" h-12 w-20 md:h-20 md:w-36"
           src="https://www.lifesonmanipal.com/logo.svg"
@@ -50,6 +52,7 @@ function PageHeader() {
               <DialogTrigger>
                 <IoMdArrowDropdown />
               </DialogTrigger>
+
               <DialogContent className="h-full w-full rounded-xl px-4 overflow-y-auto">
                 <DialogHeader>
                   <DialogTitle className="text-2xl">
@@ -76,9 +79,11 @@ function PageHeader() {
             </Dialog>
           </div>
 
-          <Button className="py-6 px-4 bg-custom-gradient">
+          {/* <Button className="py-6 px-4 bg-custom-gradient">
             Login / SignUp
-          </Button>
+          </Button> */}
+
+          <LoginForm />
         </div>
 
         {/* mobile view logos */}
@@ -139,6 +144,8 @@ function PageHeader() {
           <IoVideocamOutline />
         </span>
       </div>
+
+      <NavigationMenu />
     </div>
   );
 }

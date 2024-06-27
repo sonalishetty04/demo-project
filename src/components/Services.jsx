@@ -69,7 +69,10 @@ function Services() {
 
         <div className="flex  gap-5">
           {serviceList.map((item) => (
-            <div className="flex items-center border-2 rounded-md border-blue-800  gap-4 p-5">
+            <div
+              className="flex items-center border-2 rounded-md border-blue-800  gap-4 p-5"
+              key={item.id}
+            >
               <span className=" p-6 text-xl  text-white flex  rounded-md bg-custom-gradient">
                 {item.icon}
               </span>

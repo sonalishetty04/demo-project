@@ -53,7 +53,7 @@ function Services() {
 
           <span className=" lg:h-48 lg:w-48  h-36 w-36  rounded-full overflow-hidden bg-white border-2 border-white mr-8">
             <img
-              className="object-cover w-full h-full   "
+              className="object-cover w-full h-full "
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhqjrbbgUJUjqwntYzqm3VWPYjrTuHPqHMZw&s"
               alt="stethoscope"
             />

@@ -59,7 +59,7 @@ function ChooseManipal() {
         <h1 className="text-4xl">Choose Manipal</h1>
         <h1 className="text-4xl  my-5">Choose a world of good health</h1>
         <p className=" text-xl">
-          From starting out as a vision of one man's dream to the reality of
+          From starting out as a vision of one man&#39;s dream to the reality of
           revolutionizing the health care industry, we are proud to be the flag
           bearers of this paradigm shift with our clinical excellence, patient
           centricity and ethical practices integral to healthcare.

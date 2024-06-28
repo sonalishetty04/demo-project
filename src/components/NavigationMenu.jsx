@@ -12,14 +12,22 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import Link from "next/link";
 
 function NavigationMenu() {
   return (
     <div className="bg-custom-gradient py-4 px-6 hidden md:block text-white">
       <div className="flex justify-end items-center gap-6 text-sm">
-        <p>Vaccination Packages</p>
-        <p>Health Checkup Packages</p>
-        <p>Doctor Appointment</p>
+        <Link href="/vaccination">
+          <p>Vaccination Packages</p>
+        </Link>
+        <Link href="/healthcheckups">
+          <p>Health Checkup Packages</p>
+        </Link>
+        <Link href="/appointment">
+          <p>Doctor Appointment</p>
+        </Link>
+
         <Button className="bg-white text-blue-800 py-5 px-3 gap-2 w-36">
           <FaPhoneAlt />
           Support

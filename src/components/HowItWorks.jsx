@@ -28,37 +28,36 @@ function HowItWorks() {
     },
   ];
   return (
-    <div className="py-20 text-center text-blue-800">
-      <h1 className="text-3xl">How It Works</h1>
-      <div className="flex ">
-        <div className="flex flex-col justify-center gap-5">
-          <span>
+    <div className="py-20  px-40 text-center text-blue-800">
+      <h1 className="text-3xl mb-8">How It Works</h1>
+      <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+        <div className="flex flex-col items-center gap-5">
+          <span className="text-2xl">
             <FaUserNurse />
           </span>
           <h1>Select the consultation type and profile</h1>
         </div>
-        <div></div>
-        <div className="flex flex-col justify-center gap-5">
-          <span>
+        <div className=" md:block w-[1px] h-12 md:w-32 md:h-[2px] bg-blue-800"></div>
+        <div className="flex flex-col items-center gap-5">
+          <span className="text-2xl">
             <MdOutlineMan2 />
           </span>
-          <h1>Choose the location, speciality and doctor</h1>
+          <h1>Choose the location, specialty, and doctor</h1>
         </div>
-        <div className=" "></div>
-        <div className="flex flex-col justify-center gap-5">
-          <span>
+        <div className=" md:block w-[1px] h-12 md:w-32 md:h-[2px] bg-blue-800"></div>
+        <div className="flex flex-col items-center gap-5">
+          <span className="text-2xl">
             <IoCalendarClearOutline />
           </span>
           <h1>Book your appointment for the respective date and time</h1>
         </div>
-        <div></div>
-        <div className="flex flex-col justify-center gap-5">
-          <span>
-            <HiOutlineDevicePhoneMobile />,
+        <div className=" md:block w-[1px] h-12 md:w-32 md:h-[2px] bg-blue-800"></div>
+        <div className="flex flex-col items-center gap-5">
+          <span className="text-2xl">
+            <HiOutlineDevicePhoneMobile />
           </span>
           <h1>Pay online or pay at the hospital</h1>
         </div>
-        <div></div>
       </div>
     </div>
   );

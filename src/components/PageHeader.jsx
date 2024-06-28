@@ -18,6 +18,7 @@ import {
 import { Button } from "./ui/button";
 import NavigationMenu from "./NavigationMenu";
 import LoginForm from "./LoginForm";
+import Link from "next/link";
 
 function PageHeader() {
   const [city, setCity] = useState("Bengaluru");
@@ -31,12 +32,13 @@ function PageHeader() {
   return (
     <div className=" w-full sticky top-0 z-50 bg-white shadow-md">
       <div className="flex  items-center justify-between px-4 p-1 ">
-        <img
-          className=" h-12 w-20 md:h-20 md:w-36"
-          src="https://www.lifesonmanipal.com/logo.svg"
-          alt="logo"
-        />
-
+        <Link href={"/"}>
+          <img
+            className=" h-12 w-20 md:h-20 md:w-36"
+            src="https://www.lifesonmanipal.com/logo.svg"
+            alt="logo"
+          />
+        </Link>
         {/* large screen dialog box */}
 
         <div className=" rounded-b-md  p-2 hidden justify-between items-center md:flex w-1/2">

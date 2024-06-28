@@ -6,10 +6,11 @@ import AppointmentBanner from "@/components/AppointmentBanner";
 import ConsultDoctors from "@/components/ConsultDoctors";
 import ChooseManipal from "@/components/ChooseManipal";
 import HowItWorks from "@/components/HowItWorks";
+import EmergencyContact from "@/components/EmergencyContact";
 
 export default function Home() {
   return (
-    <div className="h-full overflow-y-auto ">
+    <div>
       <HomeSlider />
 
       <Services />
@@ -19,6 +20,7 @@ export default function Home() {
       <AppointmentBanner />
       <ChooseManipal />
       <HowItWorks />
+      <EmergencyContact />
     </div>
   );
 }

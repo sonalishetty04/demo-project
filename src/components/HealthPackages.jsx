@@ -1,4 +1,6 @@
 import React from "react";
+import { FaStethoscope } from "react-icons/fa";
+
 import {
   Card,
   CardContent,
@@ -10,8 +12,16 @@ import {
 
 function HealthPackages() {
   return (
-    <div className=" py-20">
-      <h1>Popular Health Checkup Packages</h1>
+    <div className=" py-20 px-32">
+      <div className="flex gap-8 mb-10 items-center ">
+        <span className="text-white p-4 text-lg bg-custom-gradient rounded-full">
+          <FaStethoscope />
+        </span>
+        <h1 className=" text-teal-500  font-medium text-3xl ">
+          Popular Health Checkup Packages{" "}
+        </h1>
+      </div>
+
       <Card>
         <CardHeader>
           <CardTitle>Mn</CardTitle>

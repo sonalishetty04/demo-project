@@ -28,7 +28,7 @@ function NavigationMenu() {
           <HiOutlineVideoCamera className="text-xl" />
           <Select>
             <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Primary Consultation" />
+              <SelectValue placeholder="Video Consultation" />
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>

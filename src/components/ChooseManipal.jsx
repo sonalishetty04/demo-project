@@ -39,7 +39,7 @@ function ChooseManipal() {
       subtitle: "Hospitals",
     },
     {
-      id: 6,
+      id: 16,
       icon: <FaHeartbeat />,
       title: "45",
       subtitle: "Millions lives Touched",

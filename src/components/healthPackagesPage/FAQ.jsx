@@ -48,6 +48,7 @@ function FAQ() {
         <Accordion type="single" collapsible className="w-full  p-1">
           {FAQList.map((item) => (
             <AccordionItem
+              key={item.id}
               value={`item-${item.id}`}
               className=" bg-custom-gradient p-[2px] rounded-lg my-2 "
             >

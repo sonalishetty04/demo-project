@@ -16,7 +16,7 @@ import { Button } from "../ui/button";
 import packageData from "../../data/healthPackage.json";
 
 function ProductListing() {
-  const { location, healthPackages, setHealthPackages } =
+  const { location, healthPackages, setHealthPackages, setViewPackage } =
     useHealthPackageStore();
 
   useEffect(() => {
@@ -30,6 +30,11 @@ function ProductListing() {
 
   return (
     <div className="flex flex-col items-center p-10">
+      <img
+        className=" w-full my-4"
+        src="https://www.lifesonmanipal.com/_next/image?url=%2Fimages%2Fhealth-hero2.webp&w=1920&q=75"
+        alt="details banner"
+      />
       {healthPackages.length > 0 ? (
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 w-full">
           {healthPackages.map((pkg, idx) => (
@@ -51,7 +56,8 @@ function ProductListing() {
               <CardFooter className="flex justify-between items-center py-3">
                 <p>Rs. {pkg.price}</p>
                 <Link
-                  href="#"
+                  href={`/healthcheckups/${pkg.id}`}
+                  onClick={() => setViewPackage(pkg)}
                   className="underline text-blue-600 visited:text-purple-600"
                 >
                   <p>View</p>

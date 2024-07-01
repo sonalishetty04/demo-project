@@ -75,6 +75,10 @@
   color: blue;
 }
 
+.custom-border {
+  border-image: linear-gradient(to right, #034ea1, #00b7ac) 1;
+}
+
 @layer base {
   * {
     @apply border-border;

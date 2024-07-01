@@ -62,9 +62,11 @@ function ProductListing() {
                 >
                   <p>View</p>
                 </Link>
-                <Button className="p-7 ">
-                  Add <LuShoppingCart />
-                </Button>
+                <span className=" bg-custom-gradient p-[2px] rounded-lg">
+                  <Button className="p-6 bg-white  text-black flex gap-2   ">
+                    <span>Add</span> <LuShoppingCart className="text-2xl" />
+                  </Button>
+                </span>
               </CardFooter>
             </Card>
           ))}

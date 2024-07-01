@@ -17,15 +17,15 @@ import Link from "next/link";
 function NavigationMenu() {
   return (
     <div className="bg-custom-gradient py-4 px-6 hidden md:block text-white">
-      <div className="flex justify-end items-center gap-6 text-sm">
-        <Link href="/vaccination">
-          <p>Vaccination Packages</p>
+      <div className="flex justify-end items-center gap-6 text-sm ">
+        <Link href="/vaccination ">
+          <span>Vaccination Packages</span>
         </Link>
         <Link href="/healthcheckups">
-          <p>Health Checkup Packages</p>
+          <span className="h-full">Health Checkup Packages</span>
         </Link>
         <Link href="/appointment">
-          <p>Doctor Appointment</p>
+          <span className="h-full">Doctor Appointment</span>
         </Link>
 
         <Button className="bg-white text-blue-800 py-5 px-3 gap-2 w-36">

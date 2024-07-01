@@ -1,0 +1,390 @@
+{
+    "locations": [
+      {
+        "location": "Bengaluru",
+        "packages": [
+          {
+            "id":1,
+            "img":"",
+            "name": "Heart Health Package",
+            "gender": "For Male or Female",
+            "price": 3999,
+            "description": "Detailed examination of heart health.",
+            "tests_included": ["ECG", "Treadmill Test", "Lipid Profile", "Blood Pressure"],
+            "benefits": ["Comprehensive cardiac assessment", "Early detection of heart problems"],
+            "instructions": ["Fasting for 10 hours required"]
+          },
+          {
+            "id":2,
+            "img":"",
+            "name": "Senior Citizen Health Package",
+            "gender": "For Male or Female",
+            "price": 3999,
+            "description": "Special package for senior citizens.",
+            "tests_included": ["Bone Density Test", "Arthritis Profile", "Vitamin B12", "Eye Check-up"],
+            "benefits": ["Focused on elderly health issues", "Early detection of age-related problems"],
+            "instructions": ["No fasting required"]
+          }
+        ]
+      },
+      {
+        "location": "Mysore",
+        "packages": [
+          {
+            "id":3,
+            "img":"",
+            "name": "Comprehensive Health Check-up",
+            "gender": "For Male or Female",
+            "price": 2999,
+            "description": "A thorough examination for a complete health assessment.",
+            "tests_included": ["Blood Sugar", "Cholesterol", "CBC", "Liver Function Test"],
+            "benefits": ["Early detection of health issues", "Complete health assessment"],
+            "instructions": ["Fasting for 12 hours required"]
+          },
+          {
+            "id":4,
+            "img":"",
+            "name": "Heart Health Package",
+            "gender": "For Male or Female",
+            "price": 3999,
+            "description": "Detailed examination of heart health.",
+            "tests_included": ["ECG", "Treadmill Test", "Lipid Profile", "Blood Pressure"],
+            "benefits": ["Comprehensive cardiac assessment", "Early detection of heart problems"],
+            "instructions": ["Fasting for 10 hours required"]
+          },
+          {
+            "id":5,
+            "img":"",
+            "name": "Senior Citizen Health Package",
+            "gender": "For Male or Female",
+            "price": 3999,
+            "description": "Special package for senior citizens.",
+            "tests_included": ["Bone Density Test", "Arthritis Profile", "Vitamin B12", "Eye Check-up"],
+            "benefits": ["Focused on elderly health issues", "Early detection of age-related problems"],
+            "instructions": ["No fasting required"]
+          }
+        ]
+      },
+      {
+        "location": "Salem",
+        "packages": [
+          {
+            "id":6,
+            "img":"",
+            "name": "Diabetes Care Package",
+            "gender":"For Male or Female",
+            "price": 2499,
+            "description": "Complete package for diabetes management.",
+            "tests_included": ["HbA1c", "Blood Sugar", "Kidney Function Test", "Foot Examination"],
+            "benefits": ["In-depth diabetes monitoring", "Prevention of complications"],
+            "instructions": ["Fasting for 12 hours required"]
+          },  {
+
+            "id":7,
+            "img":"",
+            "name": "Heart Health Package",
+            "gender": "For Male or Female",
+            "price": 3999,
+            "description": "Detailed examination of heart health.",
+            "tests_included": ["ECG", "Treadmill Test", "Lipid Profile", "Blood Pressure"],
+            "benefits": ["Comprehensive cardiac assessment", "Early detection of heart problems"],
+            "instructions": ["Fasting for 10 hours required"]
+          },
+          {
+            "id":8,
+            "img":"",
+            "name": "Senior Citizen Health Package",
+            "gender": "For Male or Female",
+            "price": 3999,
+            "description": "Special package for senior citizens.",
+            "tests_included": ["Bone Density Test", "Arthritis Profile", "Vitamin B12", "Eye Check-up"],
+            "benefits": ["Focused on elderly health issues", "Early detection of age-related problems"],
+            "instructions": ["No fasting required"]
+          }
+        ]
+      },
+      {
+        "location": "Mangalore",
+        "packages": [
+          {
+            "id":9,
+            "img":"",
+            "name": "Basic Health Check-up",
+            "gender": "For Male or Female",
+            "price": 1999,
+            "description": "Basic health check-up for overall wellness.",
+            "tests_included": ["Blood Sugar", "CBC", "Urine Routine"],
+            "benefits": ["Basic health assessment", "Early detection of common issues"],
+            "instructions": ["Fasting for 8 hours required"]
+          },
+          {
+            "id":10,
+            "img":"",
+            "name": "Diabetes Care Package",
+            "gender": "For Male or Female",
+            "price": 2499,
+            "description": "Complete package for diabetes management.",
+            "tests_included": ["HbA1c", "Blood Sugar", "Kidney Function Test", "Foot Examination"],
+            "benefits": ["In-depth diabetes monitoring", "Prevention of complications"],
+            "instructions": ["Fasting for 12 hours required"]
+          },  {
+
+            "id":11,
+            "img":"",
+            "name": "Heart Health Package",
+            "gender": "For Male or Female",
+            "price": 3999,
+            "description": "Detailed examination of heart health.",
+            "tests_included": ["ECG", "Treadmill Test", "Lipid Profile", "Blood Pressure"],
+            "benefits": ["Comprehensive cardiac assessment", "Early detection of heart problems"],
+            "instructions": ["Fasting for 10 hours required"]
+          },
+          {
+            "id":12,
+            "img":"",
+            "name": "Senior Citizen Health Package",
+            "gender": "For Male or Female",
+            "price": 3999,
+            "description": "Special package for senior citizens.",
+            "tests_included": ["Bone Density Test", "Arthritis Profile", "Vitamin B12", "Eye Check-up"],
+            "benefits": ["Focused on elderly health issues", "Early detection of age-related problems"],
+            "instructions": ["No fasting required"]
+          }
+        ]
+      },
+      {
+        "location": "Dwarka - Delhi",
+        "packages": [
+          {
+            "id":13,
+            "img":"",
+            "name": "Executive Health Package",
+            "gender": "For Male or Female",
+            "price": 4999,
+            "description": "Comprehensive package for executives.",
+            "tests_included": ["Cardiac Risk Markers", "Liver Function Test", "Kidney Function Test", "ECG"],
+            "benefits": ["In-depth health assessment", "Specialized for high-stress individuals"],
+            "instructions": ["Fasting for 12 hours required"]
+          }
+        ]
+      },
+      {
+        "location": "Gurugram",
+        "packages": [
+          {
+            "id":14,
+            "img":"",
+            "name": "Comprehensive Health Check-up",
+            "gender": "For Male or Female",
+            "price": 2999,
+            "description": "A thorough examination for a complete health assessment.",
+            "tests_included": ["Blood Sugar", "Cholesterol", "CBC", "Liver Function Test"],
+            "benefits": ["Early detection of health issues", "Complete health assessment"],
+            "instructions": ["Fasting for 12 hours required"]
+          }
+        ]
+      },
+      {
+        "location": "Ghaziabad",
+        "packages": [
+
+          
+          {
+            "id":15,
+            "img":"",
+            "name": "Diabetes Care Package",
+            "gender": "For Male or Female",
+            "price": 2499,
+            "description": "Complete package for diabetes management.",
+            "tests_included": ["HbA1c", "Blood Sugar", "Kidney Function Test", "Foot Examination"],
+            "benefits": ["In-depth diabetes monitoring", "Prevention of complications"],
+            "instructions": ["Fasting for 12 hours required"]
+          }
+        ]
+      },
+      {
+        "location": "Patiala",
+        "packages": [
+          {  "id":16,
+          "img":"",
+            "name": "Basic Health Check-up",
+            "gender":"For Male or Female",
+            "price": 1999,
+            "description": "Basic health check-up for overall wellness.",
+            "tests_included": ["Blood Sugar", "CBC", "Urine Routine"],
+            "benefits": ["Basic health assessment", "Early detection of common issues"],
+            "instructions": ["Fasting for 8 hours required"]
+          }
+        ]
+      },
+      {
+        "location": "Jaipur",
+        "packages": [
+          {  "id":17,
+          "img":"",
+            "name": "Executive Health Package",
+            "gender": "For Male or Female",
+            "price": 4999,
+            "description": "Comprehensive package for executives.",
+            "tests_included": ["Cardiac Risk Markers", "Liver Function Test", "Kidney Function Test", "ECG"],
+            "benefits": ["In-depth health assessment", "Specialized for high-stress individuals"],
+            "instructions": ["Fasting for 12 hours required"]
+          }
+        ]
+      },
+      {
+        "location": "Goa",
+        "packages": [
+          {  "id":18,
+          "img":"",
+            "name": "Comprehensive Health Check-up",
+            "gender": "For Male or Female",
+            "price": 2999,
+            "description": "A thorough examination for a complete health assessment.",
+            "tests_included": ["Blood Sugar", "Cholesterol", "CBC", "Liver Function Test"],
+            "benefits": ["Early detection of health issues", "Complete health assessment"],
+            "instructions": ["Fasting for 12 hours required"]
+          }
+        ]
+      },
+      {
+        "location": "Vijayawada",
+        "packages": [
+          {  "id":19,
+          "img":"",
+            "name": "Diabetes Care Package",
+            "gender":"For Male or Female",
+            "price": 2499,
+            "description": "Complete package for diabetes management.",
+            "tests_included": ["HbA1c", "Blood Sugar", "Kidney Function Test", "Foot Examination"],
+            "benefits": ["In-depth diabetes monitoring", "Prevention of complications"],
+            "instructions": ["Fasting for 12 hours required"]
+          }
+        ]
+      },
+      {
+        "location": "Kharadi - Pune",
+        "packages": [
+          {
+            "id":20,
+            "img":"",
+            "name": "Basic Health Check-up",
+            "gender": "For Male or Female",
+            "price": 1999,
+            "description": "Basic health check-up for overall wellness.",
+            "tests_included": ["Blood Sugar", "CBC", "Urine Routine"],
+            "benefits": ["Basic health assessment", "Early detection of common issues"],
+            "instructions": ["Fasting for 8 hours required"]
+          }
+        ]
+      },
+      {
+        "location": "Baner - Pune",
+        "packages": [
+          {  "id":21,
+          "img":"",
+            "name": "Executive Health Package",
+            "gender":"For Male or Female",
+            "price": 4999,
+            "description": "Comprehensive package for executives.",
+            "tests_included": ["Cardiac Risk Markers", "Liver Function Test", "Kidney Function Test", "ECG"],
+            "benefits": ["In-depth health assessment", "Specialized for high-stress individuals"],
+            "instructions": ["Fasting for 12 hours required"]
+          }
+        ]
+      },
+      {
+        "location": "Salt Lake - Kolkata",
+        "packages": [
+          {
+            "id":22,
+            "img":"",
+            "name": "Comprehensive Health Check-up",
+            "gender": "For Male or Female",
+            "price": 2999,
+            "description": "A thorough examination for a complete health assessment.",
+            "tests_included": ["Blood Sugar", "Cholesterol", "CBC", "Liver Function Test"],
+            "benefits": ["Early detection of health issues", "Complete health assessment"],
+            "instructions": ["Fasting for 12 hours required"]
+          }
+        ]
+      },
+      {
+        "location": "Mukundapur - Kolkata",
+        "packages": [
+          {
+
+            "id":23,
+            "img":"",
+            "name": "Diabetes Care Package",
+            "gender": "For Male or Female",
+            "price": 2499,
+            "description": "Complete package for diabetes management.",
+            "tests_included": ["HbA1c", "Blood Sugar", "Kidney Function Test", "Foot Examination"],
+            "benefits": ["In-depth diabetes monitoring", "Prevention of complications"],
+            "instructions": ["Fasting for 12 hours required"]
+          }
+        ]
+      },
+      {
+        "location": "Broadway - Kolkata",
+        "packages": [
+          {
+            "id":24,
+            "img":"",
+            "name": "Basic Health Check-up",
+            "gender": "For Male or Female",
+            "price": 1999,
+            "description": "Basic health check-up for overall wellness.",
+            "tests_included": ["Blood Sugar", "CBC", "Urine Routine"],
+            "benefits": ["Basic health assessment", "Early detection of common issues"],
+            "instructions": ["Fasting for 8 hours required"]
+          },
+          {
+            "id":25,
+            "img":"",
+            "name": "Diabetes Care Package",
+            "gender": "For Male or Female",
+            "price": 2499,
+            "description": "Complete package for diabetes management.",
+            "tests_included": ["HbA1c", "Blood Sugar", "Kidney Function Test", "Foot Examination"],
+            "benefits": ["In-depth diabetes monitoring", "Prevention of complications"],
+            "instructions": ["Fasting for 12 hours required"]
+          }
+        ]
+      },
+      {
+        "location": "Dhakuria - Kolkata",
+        "packages": [
+          {
+            "id":26,
+            "img":"",
+            "name": "Executive Health Package",
+            "gender": "For Male or Female",
+            "price": 4999,
+            "description": "Comprehensive package for executives.",
+            "tests_included": ["Cardiac Risk Markers", "Liver Function Test", "Kidney Function Test", "ECG"],
+            "benefits": ["In-depth health assessment", "Specialized for high-stress individuals"],
+            "instructions": ["Fasting for 12 hours required"]
+          }
+        ]
+      },
+      {
+        "location": "Bhubaneswar",
+        "packages": [
+          {
+            "id":27,
+            "img":"",
+            "name": "Comprehensive Health Check-up",
+            "gender": "For Male or Female",
+            "price": 2999,
+            "description": "A thorough examination for a complete health assessment.",
+            "tests_included": ["Blood Sugar", "Cholesterol", "CBC", "Liver Function Test"],
+            "benefits": ["Early detection of health issues", "Complete health assessment"],
+            "instructions": ["Fasting for 12 hours required"]
+          }
+        ]
+      }
+    ]
+  }
+  

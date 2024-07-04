@@ -10,9 +10,8 @@ function ProductDetails() {
   const { viewPackage, location } = useHealthPackageStore();
   const [selectedSec, setSelectedSec] = useState(1);
 
-  console.log(viewPackage);
   return (
-    <div className=" h-full w-full px-24 py-10 ">
+    <div className=" h-full w-full my-10 ">
       {viewPackage !== null ? (
         <div className=" h-full w-full flex p-6  gap-10 bg-white rounded-xl">
           {/* left section */}

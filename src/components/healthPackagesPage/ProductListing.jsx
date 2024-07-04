@@ -29,7 +29,7 @@ function ProductListing() {
   }, [location, setHealthPackages]);
 
   return (
-    <div className="flex flex-col items-center p-10">
+    <div className="flex flex-col items-center py-10">
       <img
         className=" w-full my-4"
         src="https://www.lifesonmanipal.com/_next/image?url=%2Fimages%2Fhealth-hero2.webp&w=1920&q=75"
@@ -46,7 +46,7 @@ function ProductListing() {
                 />
               </CardHeader>
               <CardContent className="p-8">
-                <CardTitle className="pb-10 text-xl font-medium">
+                <CardTitle className="mb-8 text-xl font-medium">
                   {pkg.name}
                 </CardTitle>
                 <p className="pb-3">{pkg.gender}</p>

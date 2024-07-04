@@ -40,7 +40,7 @@ function PageHeader() {
             alt="logo"
           />
         </Link>
-        <div className="rounded-b-md p-2 hidden justify-between items-center md:flex w-1/2">
+        <div className="rounded-b-md p-2 hidden justify-between items-center md:flex w-1/2 ">
           <Dialog>
             <DialogTrigger asChild>
               <div className="flex justify-between items-center w-2/3 border py-2 px-4 rounded-md border-teal-500 cursor-pointer">

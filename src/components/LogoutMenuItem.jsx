@@ -46,7 +46,7 @@ function LogoutMenuItem() {
           <span>UserName</span>
         </div>
 
-        <span className="text-xs "> Hope you're well</span>
+        <span className="text-xs ">{"Hope you're well"}</span>
       </div>
       <div className="flex">
         <span

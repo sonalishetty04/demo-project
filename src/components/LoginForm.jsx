@@ -1,103 +1,207 @@
-import React, { useState } from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-
+import { FaArrowRight } from "react-icons/fa";
 import { MdOutlineClose } from "react-icons/md";
 import { Separator } from "./ui/separator";
+import useAuthStore from "@/store/userAuthStore";
+import { Alert } from "./ui/alert";
+import { useRouter } from "next/navigation";
 
-function LoginForm() {
-  const [toggle, setToggle] = useState(false);
+function LoginForm({ toggleForm, setToggleForm, loginForm, setLoginForm }) {
+  const { user, signUp, logIn, logOut, init, error, clearError } =
+    useAuthStore();
+  const router = useRouter();
 
-  const handleLoginDialog = () => {};
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  console.log(user);
+  // Initialize auth state listener
+  useEffect(() => {
+    init();
+  }, [init]);
+
+  // Clear error when switching between forms
+  useEffect(() => {
+    clearError();
+  }, [loginForm]);
+
+  // Navigate to profile page on successful login or signup
+  useEffect(() => {
+    if (user) {
+      router.push("/profile");
+      setToggleForm(false);
+    }
+  }, [user, router]);
+
+  const handleSignUpSubmit = async (e) => {
+    e.preventDefault();
+    clearError();
+    await signUp(email, password);
+  };
+
+  const handleLoginSubmit = async (e) => {
+    e.preventDefault();
+
+    await logIn(email, password);
+  };
+  if (!toggleForm) return null;
   return (
     <div>
-      <Button
-        className="py-6 px-4 bg-custom-gradient"
-        onClick={() => setToggle(true)}
-      >
-        Login / SignUp
-      </Button>
-
-      {toggle ? (
+      {toggleForm ? (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 py-5">
           <div className="bg-gray-100 w-4/6 h-full flex rounded-md shadow-lg">
-            <div className="w-1/2 h-full">
+            <div className="w-1/2 h-full lg:block hidden">
               <img
                 className="w-full h-full object-cover rounded-l-md"
                 src="https://www.lifesonmanipal.com/_next/image?url=%2Fimages%2FauthImage.png&w=1920&q=75"
                 alt="login"
               />
             </div>
-            <div className="w-1/2 p-5 relative ">
+            <div className=" w-full lg:w-1/2 p-5 relative ">
               <span
                 className="absolute right-5 cursor-pointer text-xl"
-                onClick={() => setToggle(false)}
+                onClick={() => setToggleForm(false)}
               >
                 <MdOutlineClose />
               </span>
               <div className=" p-10 flex flex-col justify-center">
                 <h1 className="text-2xl font-medium text-gray-500 mb-4">
-                  Sign Up
+                  {loginForm ? "Hi there " : "Sign Up"}
                 </h1>
+
                 <h2 className="text-2xl mb-4">Welcome to Life’s On Manipal.</h2>
 
                 <Separator />
-                <div className="my-4 bg-white  p-5">
-                  <Label htmlFor="number" className="block mb-2">
-                    Enter Mobile Number
-                  </Label>
-                  <Input
-                    id="number"
-                    className="w-full border-0 border-b-[1px] shadow-transparent	"
-                  />
-                </div>
+
+                {loginForm ? (
+                  // Login form
+
+                  <div className=" mt-2 ">
+                    {error ? (
+                      <Alert className="text-red-700 text-center bg-red-50">
+                        {error}
+                      </Alert>
+                    ) : (
+                      ""
+                    )}
+                    <form
+                      className="w-full flex flex-col justify-center items-center"
+                      onSubmit={handleLoginSubmit}
+                    >
+                      <div className="my-4 bg-white w-full rounded-lg p-6">
+                        <>
+                          <label htmlFor="email" className="block mb-2">
+                            Registered Email Address
+                          </label>
+                          <input
+                            onChange={(e) => setEmail(e.target.value)}
+                            id="email"
+                            type="email"
+                            className="w-full border-0 border-b-[1px] p-2 outline-none shadow-transparent active:outline-none focus:outline-none	"
+                          />
+                        </>
+                        <div className="mt-5">
+                          <label htmlFor="password" className="block mb-2">
+                            Enter Password
+                          </label>
+                          <input
+                            onChange={(e) => setPassword(e.target.value)}
+                            id="password"
+                            type="password"
+                            className="w-full border-0  border-b-[1px] p-2 shadow-transparent active:outline-none focus:outline-none	"
+                          />
+                        </div>
+                      </div>
+                      <Button
+                        type="submit"
+                        className=" align-middle p-6 bg-blue-800 mt-8"
+                      >
+                        <span>Sign in with email</span>
+                        <FaArrowRight className="ml-2 " />
+                      </Button>
+                    </form>
+
+                    <Separator className="mt-8" />
+
+                    <p className="text-center mt-4">
+                      Not registered with us?
+                      <span
+                        className="underline underline-offset-1 pl-1"
+                        onClick={() => setLoginForm(false)}
+                      >
+                        Sign up.
+                      </span>
+                    </p>
+                  </div>
+                ) : (
+                  // Sign up form
+
+                  <div className=" mt-2 ">
+                    {error ? (
+                      <Alert className="text-red-700 text-center bg-red-50 ">
+                        {error}
+                      </Alert>
+                    ) : (
+                      ""
+                    )}
+                    <form
+                      className="w-full flex flex-col justify-center items-center"
+                      onSubmit={handleSignUpSubmit}
+                    >
+                      <div className="my-4 bg-white w-full rounded-lg p-6">
+                        <>
+                          <label htmlFor="email" className="block mb-2">
+                            Email Address
+                          </label>
+                          <input
+                            onChange={(e) => setEmail(e.target.value)}
+                            id="email"
+                            type="email"
+                            className="w-full border-0 border-b-[1px] p-2 outline-none shadow-transparent active:outline-none focus:outline-none	"
+                          />
+                        </>
+                        <div className="mt-5">
+                          <label htmlFor="password" className="block mb-2">
+                            Enter Password
+                          </label>
+                          <input
+                            onChange={(e) => setPassword(e.target.value)}
+                            id="password"
+                            type="password"
+                            className="w-full border-0  border-b-[1px] p-2 shadow-transparent active:outline-none focus:outline-none	"
+                          />
+                        </div>
+                      </div>
+                      <Button
+                        type="submit"
+                        className=" align-middle p-6 bg-blue-800 mt-8"
+                      >
+                        <span> Sign up</span>
+                        <FaArrowRight className="ml-2 " />
+                      </Button>
+                    </form>
+
+                    <Separator className="mt-8" />
+
+                    <p className="text-center mt-4">
+                      Already registered ?
+                      <span
+                        className="underline underline-offset-1 pl-1"
+                        onClick={() => setLoginForm(true)}
+                      >
+                        Sign in.
+                      </span>
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
         </div>
       ) : null}
     </div>
-    // <Dialog>
-    //   <DialogTrigger asChild>
-    //     <Button className="py-6 px-4 bg-custom-gradient">Login / SignUp</Button>
-    //   </DialogTrigger>
-    //   <DialogContent
-    //     className="p-0 w-1/2 max-w-none
-    //    h-full "
-    //   >
-    //     <div className=" flex p-0">
-    //       <div>
-    //         <img
-    //           className=" w-full object-cover rounded-md "
-    //           src="https://www.lifesonmanipal.com/_next/image?url=%2Fimages%2FauthImage.png&w=1920&q=75"
-    //           alt="login"
-    //         />
-    //       </div>
-    //       <div className="w-1/2">
-    //         <div className="p-10">
-    //           <h1>Sign Up</h1>
-    //           <h2>Welcome to Life’s On Manipal.</h2>
-    //           <div className="p-5 bg-white ">
-    //             <Label htmlFor="username" className="text-right">
-    //               Enter Mobile Number
-    //             </Label>
-    //             <Input id="number" />
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </DialogContent>
-    // </Dialog>
   );
 }
 

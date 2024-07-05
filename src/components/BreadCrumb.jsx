@@ -35,7 +35,9 @@ function BreadCrumb() {
               <React.Fragment key={idx}>
                 <BreadcrumbItem>
                   {isLast ? (
-                    <BreadcrumbPage>{path}</BreadcrumbPage>
+                    <BreadcrumbPage className="text-blue-800">
+                      {path}
+                    </BreadcrumbPage>
                   ) : (
                     <BreadcrumbLink href={href}>{path}</BreadcrumbLink>
                   )}

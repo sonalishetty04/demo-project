@@ -18,10 +18,25 @@ import NavigationMenu from "./NavigationMenu";
 import LoginForm from "./LoginForm";
 import Link from "next/link";
 import useHealthPackageStore from ".././store/healthPackageStore";
+import useAuthStore from "@/store/userAuthStore";
+import LogoutMenuItem from "./LogoutMenuItem";
 
 function PageHeader() {
   const { setLocation } = useHealthPackageStore();
   const [city, setCity] = useState("Bengaluru - Old Airport Road");
+  const [toggleForm, setToggleForm] = useState(false);
+  const [loginForm, setLoginForm] = useState(false);
+
+  const { user } = useAuthStore();
+
+  const handleLoginForm = () => {
+    setLoginForm(true);
+    setToggleForm(true);
+  };
+  const handleSignUpForm = () => {
+    setLoginForm(false);
+    setToggleForm(true);
+  };
 
   const handleOnClick = (e) => {
     const input = e.target.innerText;
@@ -31,7 +46,7 @@ function PageHeader() {
   };
 
   return (
-    <div className="w-full sticky top-0 z-50 bg-white shadow-md">
+    <div className="w-full sticky top-0 z-50 bg-white shadow-md ">
       <div className="flex items-center justify-between px-4 p-1 ">
         <Link href={"/"}>
           <img
@@ -40,7 +55,7 @@ function PageHeader() {
             alt="logo"
           />
         </Link>
-        <div className="rounded-b-md p-2 hidden justify-between items-center md:flex w-1/2 ">
+        <div className="rounded-b-md p-2 hidden justify-between items-center md:flex  gap-5 ">
           <Dialog>
             <DialogTrigger asChild>
               <div className="flex justify-between items-center w-2/3 border py-2 px-4 rounded-md border-teal-500 cursor-pointer">
@@ -77,8 +92,33 @@ function PageHeader() {
               </DialogHeader>
             </DialogContent>
           </Dialog>
-          <LoginForm />
+
+          {/* Signup/ Login form trigger */}
+
+          {user ? (
+            <LogoutMenuItem />
+          ) : (
+            <div className=" bg-custom-gradient flex rounded-xl py-3 px-5 cursor-pointer  text-sm text-white">
+              <span className="bg-transparent pr-2 " onClick={handleLoginForm}>
+                Login
+              </span>
+              <span className="text-center">/</span>
+
+              <span className="bg-transparent  pl-2" onClick={handleSignUpForm}>
+                Signup
+              </span>
+            </div>
+          )}
+
+          {/* toggle form modal*/}
+          <LoginForm
+            toggleForm={toggleForm}
+            setToggleForm={setToggleForm}
+            loginForm={loginForm}
+            setLoginForm={setLoginForm}
+          />
         </div>
+
         <div className="flex justify-between w-1/5 items-center md:hidden">
           <span className="rounded-full bg-blue-900 text-white p-2 text-sm ">
             <FaPhoneAlt />

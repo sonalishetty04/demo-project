@@ -1,13 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { IoIosArrowBack } from "react-icons/io";
-import { FaRegEye } from "react-icons/fa";
-import { BsPerson } from "react-icons/bs";
-import { MdOutlineMailOutline } from "react-icons/md";
-import { CiPhone } from "react-icons/ci";
+
 import { HiOutlinePlus } from "react-icons/hi";
-import Link from "next/link";
+
+import UserData from "./UserData";
 
 function UserProfile() {
   const [selectedSec, setSelectedSec] = useState(1);
@@ -16,41 +13,7 @@ function UserProfile() {
       <div className="lg:flex-row gap-2 flex-col flex">
         {/* left section */}
         <div className="lg:w-7/12 w-full text-white">
-          <div className="bg-custom-gradient w-full rounded-3xl flex flex-col p-8">
-            <Link href="/">
-              <div className="flex">
-                <span className="text-left p-3 border-[1px] border-gray-300 rounded-full text-2xl bg-white bg-opacity-20">
-                  <IoIosArrowBack />
-                </span>
-              </div>
-            </Link>
-            <div className="justify-center items-center flex flex-col gap-5">
-              <h1 className="text-3xl text-white font-bold">Hello World</h1>
-              <span className="border-4 border-blue-900 w-44 h-44 rounded-full overflow-hidden">
-                <img
-                  className=""
-                  src="https://www.businessnetworks.com/sites/default/files/default_images/default-avatar.png"
-                  alt="avatar"
-                />
-              </span>
-              <div className="flex items-center gap-3 cursor-pointer">
-                <FaRegEye />
-                <p className="">View Profile</p>
-              </div>
-
-              <div className="w-full flex flex-col justify-center gap-3 items-center text-xs">
-                <p className="flex items-center gap-3 border-[1px] p-3 w-2/5 rounded-md bg-white bg-opacity-20 border-white">
-                  <BsPerson /> <span>PRF.65428</span>
-                </p>
-                <p className="flex items-center gap-3 border-[1px] p-3 w-2/5 rounded-md bg-white bg-opacity-20 border-white">
-                  <MdOutlineMailOutline /> <span>test@gmail.com</span>
-                </p>
-                <p className="flex items-center gap-3 border-[1px] p-3 w-2/5 rounded-md bg-white bg-opacity-20 border-white">
-                  <CiPhone /> <span>987654321</span>
-                </p>
-              </div>
-            </div>
-          </div>
+          <UserData />
           <div className="text-black my-6">
             <h1 className="font-medium text-xl">My Family Members</h1>
 

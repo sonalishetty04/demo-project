@@ -24,7 +24,10 @@ const useAuthStore = create((set) => ({
       const token = userCredential.user.accessToken;
       Cookies.set("authToken", token, { expires: 7 });
 
-      set({ user: userCredential.user, error: null });
+      set({
+        user: userCredential.user,
+        error: null,
+      });
     } catch (error) {
       set({ error: error.message });
     }
@@ -40,9 +43,15 @@ const useAuthStore = create((set) => ({
 
       const token = userCredential.user.accessToken;
       Cookies.set("authToken", token, { expires: 7 });
-      set({ user: userCredential.user, error: null });
+      set({
+        user: userCredential.user,
+        error: null,
+      });
+
+      return true;
     } catch (error) {
       set({ error: error.message });
+      return false;
     }
   },
   logOut: async () => {

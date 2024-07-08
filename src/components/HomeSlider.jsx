@@ -38,8 +38,6 @@ function HomeSlider() {
       id: 3,
       url: "https://mhcp-prod.s3.us-west-2.amazonaws.com/banners/660d45f7b09d5651ed925805/image.jpg",
     },
-    // { id: 2, url: "https://shorturl.at/PUKyh" },
-    // { id: 3, url: "https://shorturl.at/PUKyh" },
   ];
 
   return (

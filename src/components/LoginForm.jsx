@@ -36,17 +36,21 @@ function LoginForm({
     e.preventDefault();
     clearError();
     await signUp(email, password);
-
     setShowProfileForm(true);
   };
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
 
-    await logIn(email, password);
-    router.push("/profile");
+    const success = await logIn(email, password);
+    if (success) {
+      setToggleForm(false);
+      router.push("/profile");
+    }
   };
+
   if (!toggleForm) return null;
+
   return (
     <div>
       {toggleForm ? (

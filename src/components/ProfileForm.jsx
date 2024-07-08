@@ -6,9 +6,11 @@ import { collection, addDoc } from "firebase/firestore";
 import { Button } from "@/components/ui/button";
 import { FaArrowRight } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
+import useAuthStore from "@/store/userAuthStore";
 
-function ProfileForm({ uid }) {
+function ProfileForm({ setToggleForm }) {
   const router = useRouter();
+  const { user } = useAuthStore();
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -27,7 +29,7 @@ function ProfileForm({ uid }) {
 
   const addDataToFireStore = async () => {
     try {
-      await addDoc(collection(db, "profiles"), { uid, formData });
+      await addDoc(collection(db, "profiles"), { uid: user.uid, formData });
 
       return true;
     } catch (error) {
@@ -42,7 +44,7 @@ function ProfileForm({ uid }) {
     const added = await addDataToFireStore();
     if (added) {
       router.push("/profile");
-
+      setToggleForm(false);
       setFormData({
         firstName: "",
         lastName: "",

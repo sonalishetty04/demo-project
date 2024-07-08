@@ -27,13 +27,13 @@ function LogoutMenuItem({ setShowProfileForm }) {
 
   const handleLogout = async () => {
     await logOut();
+    router.push("/");
     setDropDown(false);
     setShowProfileForm(false);
   };
 
   const handleUserNameClick = () => {
     router.push("/profile");
-
     setDropDown(false);
   };
 
@@ -47,7 +47,7 @@ function LogoutMenuItem({ setShowProfileForm }) {
 
         <span className="text-xs ">{"Hope you're well"}</span>
       </div>
-      <div className="flex">
+      <div className="flex cursor-pointer">
         <span
           className=" bg-gray-100 text-blue-800 text-2xl rounded-full p-3 "
           onClick={() => setDropDown(!dropDown)}
@@ -56,7 +56,7 @@ function LogoutMenuItem({ setShowProfileForm }) {
         </span>
 
         {dropDown ? (
-          <div className="absolute text-blue-800 bg-white  rounded-lg  top-20  shadow-2xl min-w-max right-10">
+          <div className="absolute text-blue-800 bg-white  rounded-lg cursor-pointer  top-20  shadow-2xl min-w-max right-10">
             <div
               className="font-medium flex items-center gap-3 p-3"
               onClick={handleUserNameClick}

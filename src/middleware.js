@@ -3,8 +3,7 @@ import { NextResponse } from "next/server";
 export function middleware(request) {
   console.log("running");
 
-  const token = request.cookies.get("accessToken");
-  console.log(token, 11);
+  const token = request.cookies.get("authToken");
 
   if (!token) {
     return NextResponse.redirect(new URL("/", request.url));

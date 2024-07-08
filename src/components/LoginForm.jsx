@@ -17,10 +17,8 @@ function LoginForm({
   showProfileForm,
   setShowProfileForm,
 }) {
-  const { user, signUp, logIn, init, error, clearError } = useAuthStore();
-
+  const { signUp, logIn, init, error, clearError } = useAuthStore();
   const router = useRouter();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -33,14 +31,6 @@ function LoginForm({
   useEffect(() => {
     clearError();
   }, [loginForm]);
-
-  // Navigate to profile page on successful login or signup
-  useEffect(() => {
-    if (user) {
-      router.push("/profile");
-      setToggleForm(false);
-    }
-  }, [user, router]);
 
   const handleSignUpSubmit = async (e) => {
     e.preventDefault();
@@ -89,7 +79,7 @@ function LoginForm({
 
                 {showProfileForm ? (
                   <div className="mt-8">
-                    <ProfileForm uid={user.uid} />
+                    <ProfileForm setToggleForm={setToggleForm} />
                   </div>
                 ) : loginForm ? (
                   <div className="mt-2">

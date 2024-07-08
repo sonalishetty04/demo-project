@@ -16,11 +16,10 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { useRouter } from "next/navigation";
-
 import useAuthStore from "@/store/userAuthStore";
 import Link from "next/link";
 
-function LogoutMenuItem() {
+function LogoutMenuItem({ setShowProfileForm }) {
   const { logOut } = useAuthStore();
   const router = useRouter();
 
@@ -28,8 +27,8 @@ function LogoutMenuItem() {
 
   const handleLogout = async () => {
     await logOut();
-
     setDropDown(false);
+    setShowProfileForm(false);
   };
 
   const handleUserNameClick = () => {

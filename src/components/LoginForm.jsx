@@ -7,16 +7,23 @@ import { Separator } from "./ui/separator";
 import useAuthStore from "@/store/userAuthStore";
 import { Alert } from "./ui/alert";
 import { useRouter } from "next/navigation";
+import ProfileForm from "./ProfileForm";
 
-function LoginForm({ toggleForm, setToggleForm, loginForm, setLoginForm }) {
-  const { user, signUp, logIn, logOut, init, error, clearError } =
-    useAuthStore();
+function LoginForm({
+  toggleForm,
+  setToggleForm,
+  loginForm,
+  setLoginForm,
+  showProfileForm,
+  setShowProfileForm,
+}) {
+  const { user, signUp, logIn, init, error, clearError } = useAuthStore();
+
   const router = useRouter();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  console.log(user);
   // Initialize auth state listener
   useEffect(() => {
     init();
@@ -39,12 +46,15 @@ function LoginForm({ toggleForm, setToggleForm, loginForm, setLoginForm }) {
     e.preventDefault();
     clearError();
     await signUp(email, password);
+
+    setShowProfileForm(true);
   };
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
 
     await logIn(email, password);
+    router.push("/profile");
   };
   if (!toggleForm) return null;
   return (
@@ -75,10 +85,14 @@ function LoginForm({ toggleForm, setToggleForm, loginForm, setLoginForm }) {
 
                 <Separator />
 
-                {loginForm ? (
-                  // Login form
+                {/* user details form to render after signup */}
 
-                  <div className=" mt-2 ">
+                {showProfileForm ? (
+                  <div className="mt-8">
+                    <ProfileForm uid={user.uid} />
+                  </div>
+                ) : loginForm ? (
+                  <div className="mt-2">
                     {error ? (
                       <Alert className="text-red-700 text-center bg-red-50">
                         {error}
@@ -91,17 +105,15 @@ function LoginForm({ toggleForm, setToggleForm, loginForm, setLoginForm }) {
                       onSubmit={handleLoginSubmit}
                     >
                       <div className="my-4 bg-white w-full rounded-lg p-6">
-                        <>
-                          <label htmlFor="email" className="block mb-2">
-                            Registered Email Address
-                          </label>
-                          <input
-                            onChange={(e) => setEmail(e.target.value)}
-                            id="email"
-                            type="email"
-                            className="w-full border-0 border-b-[1px] p-2 outline-none shadow-transparent active:outline-none focus:outline-none	"
-                          />
-                        </>
+                        <label htmlFor="email" className="block mb-2">
+                          Registered Email Address
+                        </label>
+                        <input
+                          onChange={(e) => setEmail(e.target.value)}
+                          id="email"
+                          type="email"
+                          className="w-full border-0 border-b-[1px] p-2 outline-none shadow-transparent active:outline-none focus:outline-none"
+                        />
                         <div className="mt-5">
                           <label htmlFor="password" className="block mb-2">
                             Enter Password
@@ -110,25 +122,23 @@ function LoginForm({ toggleForm, setToggleForm, loginForm, setLoginForm }) {
                             onChange={(e) => setPassword(e.target.value)}
                             id="password"
                             type="password"
-                            className="w-full border-0  border-b-[1px] p-2 shadow-transparent active:outline-none focus:outline-none	"
+                            className="w-full border-0 border-b-[1px] p-2 shadow-transparent active:outline-none focus:outline-none"
                           />
                         </div>
                       </div>
                       <Button
                         type="submit"
-                        className=" align-middle p-6 bg-blue-800 mt-8"
+                        className="align-middle p-6 bg-blue-800 mt-8"
                       >
                         <span>Sign in with email</span>
-                        <FaArrowRight className="ml-2 " />
+                        <FaArrowRight className="ml-2" />
                       </Button>
                     </form>
-
                     <Separator className="mt-8" />
-
                     <p className="text-center mt-4">
                       Not registered with us?
                       <span
-                        className="underline underline-offset-1 pl-1"
+                        className="underline underline-offset-1 pl-1 cursor-pointer"
                         onClick={() => setLoginForm(false)}
                       >
                         Sign up.
@@ -136,11 +146,9 @@ function LoginForm({ toggleForm, setToggleForm, loginForm, setLoginForm }) {
                     </p>
                   </div>
                 ) : (
-                  // Sign up form
-
-                  <div className=" mt-2 ">
+                  <div className="mt-2">
                     {error ? (
-                      <Alert className="text-red-700 text-center bg-red-50 ">
+                      <Alert className="text-red-700 text-center bg-red-50">
                         {error}
                       </Alert>
                     ) : (
@@ -151,17 +159,15 @@ function LoginForm({ toggleForm, setToggleForm, loginForm, setLoginForm }) {
                       onSubmit={handleSignUpSubmit}
                     >
                       <div className="my-4 bg-white w-full rounded-lg p-6">
-                        <>
-                          <label htmlFor="email" className="block mb-2">
-                            Email Address
-                          </label>
-                          <input
-                            onChange={(e) => setEmail(e.target.value)}
-                            id="email"
-                            type="email"
-                            className="w-full border-0 border-b-[1px] p-2 outline-none shadow-transparent active:outline-none focus:outline-none	"
-                          />
-                        </>
+                        <label htmlFor="email" className="block mb-2">
+                          Email Address
+                        </label>
+                        <input
+                          onChange={(e) => setEmail(e.target.value)}
+                          id="email"
+                          type="email"
+                          className="w-full border-0 border-b-[1px] p-2 outline-none shadow-transparent active:outline-none focus:outline-none"
+                        />
                         <div className="mt-5">
                           <label htmlFor="password" className="block mb-2">
                             Enter Password
@@ -170,25 +176,23 @@ function LoginForm({ toggleForm, setToggleForm, loginForm, setLoginForm }) {
                             onChange={(e) => setPassword(e.target.value)}
                             id="password"
                             type="password"
-                            className="w-full border-0  border-b-[1px] p-2 shadow-transparent active:outline-none focus:outline-none	"
+                            className="w-full border-0 border-b-[1px] p-2 shadow-transparent active:outline-none focus:outline-none"
                           />
                         </div>
                       </div>
                       <Button
                         type="submit"
-                        className=" align-middle p-6 bg-blue-800 mt-8"
+                        className="align-middle p-6 bg-blue-800 mt-8"
                       >
-                        <span> Sign up</span>
-                        <FaArrowRight className="ml-2 " />
+                        <span>Sign up</span>
+                        <FaArrowRight className="ml-2" />
                       </Button>
                     </form>
-
                     <Separator className="mt-8" />
-
                     <p className="text-center mt-4">
-                      Already registered ?
+                      Already registered?
                       <span
-                        className="underline underline-offset-1 pl-1"
+                        className="underline underline-offset-1 pl-1 cursor-pointer"
                         onClick={() => setLoginForm(true)}
                       >
                         Sign in.

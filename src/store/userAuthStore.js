@@ -10,6 +10,7 @@ import { auth } from "../firebase";
 const useAuthStore = create((set) => ({
   user: null,
   error: null,
+
   signUp: async (email, password) => {
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -29,6 +30,7 @@ const useAuthStore = create((set) => ({
         email,
         password
       );
+
       set({ user: userCredential.user, error: null });
     } catch (error) {
       set({ error: error.message });

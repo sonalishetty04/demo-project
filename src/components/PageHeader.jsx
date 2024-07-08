@@ -26,6 +26,7 @@ function PageHeader() {
   const [city, setCity] = useState("Bengaluru - Old Airport Road");
   const [toggleForm, setToggleForm] = useState(false);
   const [loginForm, setLoginForm] = useState(false);
+  const [showProfileForm, setShowProfileForm] = useState(false);
 
   const { user } = useAuthStore();
 
@@ -96,7 +97,7 @@ function PageHeader() {
           {/* Signup/ Login form trigger */}
 
           {user ? (
-            <LogoutMenuItem />
+            <LogoutMenuItem setShowProfileForm={setShowProfileForm} />
           ) : (
             <div className=" bg-custom-gradient flex rounded-xl py-3 px-5 cursor-pointer  text-sm text-white">
               <span className="bg-transparent pr-2 " onClick={handleLoginForm}>
@@ -116,6 +117,8 @@ function PageHeader() {
             setToggleForm={setToggleForm}
             loginForm={loginForm}
             setLoginForm={setLoginForm}
+            setShowProfileForm={setShowProfileForm}
+            showProfileForm={showProfileForm}
           />
         </div>
 

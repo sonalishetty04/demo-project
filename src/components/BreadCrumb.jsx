@@ -18,7 +18,7 @@ function BreadCrumb() {
   const pathArr = path.split("/").filter((pathName) => pathName);
 
   return (
-    <div className="">
+    <div>
       <Breadcrumb className="p-4 shadow-md rounded-lg bg-white ">
         <BreadcrumbList className="px-10">
           <BreadcrumbItem>

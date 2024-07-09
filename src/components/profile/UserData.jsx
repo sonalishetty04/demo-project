@@ -12,7 +12,7 @@ import { BsGenderFemale } from "react-icons/bs";
 import { FaGenderless } from "react-icons/fa6";
 
 function UserData() {
-  const { user } = useAuthStore();
+  const { user, setFirstName } = useAuthStore();
   const [profileInfo, setProfileInfo] = useState(null);
   const [userEmail, setUserEmail] = useState(null);
   const [uhid, setUhid] = useState(null);
@@ -35,10 +35,14 @@ function UserData() {
             (currUser) => currUser.uid === userUid
           );
 
+          const userProfile = filterUser[0] || null;
           setUhid(userUhid);
-          setProfileInfo(filterUser[0] || null);
-
+          setProfileInfo(userProfile);
           setUserEmail(emailId);
+
+          if (userProfile) {
+            setFirstName(userProfile.formData.firstName);
+          }
         } catch (error) {
           console.error("Error fetching user data: ", error.message);
         }

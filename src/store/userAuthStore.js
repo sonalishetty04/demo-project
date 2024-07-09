@@ -12,6 +12,8 @@ import { auth } from "../firebase";
 const useAuthStore = create((set) => ({
   user: null,
   error: null,
+  firstName: null,
+  setFirstName: (firstName) => set({ firstName }),
 
   signUp: async (email, password) => {
     try {

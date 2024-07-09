@@ -20,7 +20,7 @@ import useAuthStore from "@/store/userAuthStore";
 import Link from "next/link";
 
 function LogoutMenuItem({ setShowProfileForm }) {
-  const { logOut } = useAuthStore();
+  const { logOut, firstName } = useAuthStore();
   const router = useRouter();
 
   const [dropDown, setDropDown] = useState(false);
@@ -39,10 +39,10 @@ function LogoutMenuItem({ setShowProfileForm }) {
 
   return (
     <div className="flex items-center gap-3  ">
-      <div>
-        <div className="font-medium ">
+      <div className="min-w-24 m-w-max ">
+        <div className="font-medium m ">
           <span className="mr-1">Hello,</span>
-          <span>UserName</span>
+          <span>{firstName}</span>
         </div>
 
         <span className="text-xs ">{"Hope you're well"}</span>

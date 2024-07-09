@@ -61,7 +61,7 @@ function LogoutMenuItem({ setShowProfileForm }) {
               className="font-medium flex items-center gap-3 p-3"
               onClick={handleUserNameClick}
             >
-              <MdPersonOutline className="text-xl" /> <span>UserName</span>
+              <MdPersonOutline className="text-xl" /> <span>{firstName}</span>
             </div>
             <Separator />
 
